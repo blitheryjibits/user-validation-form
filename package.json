@@ -1,0 +1,23 @@
+{
+  "name": "user-validation-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "countryLoader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blitheryjibits/user-validation-form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blitheryjibits/user-validation-form/issues"
+  },
+  "homepage": "https://github.com/blitheryjibits/user-validation-form#readme",
+  "dependencies": {
+    "postcode-validator": "^3.8.20"
+  }
+}
