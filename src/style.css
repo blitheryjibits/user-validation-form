@@ -1,0 +1,51 @@
+@import url("../src/background.jpg");
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin-top:30vh;
+    background-image: url("./background.jpg");
+}
+.container {
+    display: block;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 60vw;
+    height: fit-content;
+    padding: 1rem;
+    background-color: rgba(226, 226, 226, 0.4);
+}
+
+.title-container,
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: grid;
+    align-items: center;
+}
+
+label {
+    padding: 0.5rem;
+}
+
+input, .form-select {
+    line-height: 1.2rem;
+    padding: 0.3rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+}
+
+.form-select {
+    line-height: 1.6rem;
+}
+input:invalid {
+    border: 2px solid red;
+}
+
+.submit-btn {
+    margin: 1rem;
+    justify-self: center;
+}
