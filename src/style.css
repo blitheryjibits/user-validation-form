@@ -1,11 +1,17 @@
-/* @import url("../src/background.jpg"); */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;;
+}
+
 body{
     display: flex;
     height: 100vh;
     justify-content: center;
-    margin-top:30vh;
-    /* background-image: url("./background.jpg"); */
+    align-items: center;
+    background-size: cover; 
 }
+
 .container {
     display: block;
     border: 1px solid black;
