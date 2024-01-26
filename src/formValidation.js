@@ -1,5 +1,5 @@
 
-const codeValidator = require('postcode-validator');
+const { postcodeValidator, postcodeValidatorExistsForCountry } = require('postcode-validator');
 
 // Variables for form input elements
 export function gatherDOMElements() {
@@ -7,7 +7,7 @@ const form = document.getElementById("info-form");
 const emailInput = document.getElementById("email-input");
 const passwordInput = document.getElementById("password-input");
 const passwordConfirmation = document.getElementById("password-confirmation");
-const country = document.getElementById("country-input");
+const country = document.getElementById("country");
 const zipcode = document.getElementById("zipcode-input");
 
 return [form, emailInput, passwordInput, passwordConfirmation, country, zipcode];
@@ -19,6 +19,7 @@ export function validate(event) {
 
     const [form, emailInput, passwordInput, passwordConfirmation, country, zipcode] = gatherDOMElements();
 
+    // check email
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(emailInput.value)) {
         emailInput.setCustomValidity("Not a valid email");
@@ -26,6 +27,7 @@ export function validate(event) {
 
     const passwordRegex = /^(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*\d)(?=.*[A-Z]).+$/
 
+    // check passwords
     if (!passwordRegex.test(passwordInput.value)) {
         passwordInput.setCustomValidity("Password must contain atleast one special character, one number and one capital letter.");
         passwordInput.reportValidity();
@@ -34,16 +36,10 @@ export function validate(event) {
         passwordConfirmation.reportValidity();
     }
     
-    if (form.reportValidity()) {
-        console.log("Form succesfully submitted");
-    }
+    // check zipcode is from selected country
+    console.log(postcodeValidator(zipcode.value, country.value));
 
     resetErrorMessage(emailInput, passwordInput, passwordConfirmation, country, zipcode);
-
-
-    // check
-    // zipcode is from selected country
-
 
 }
 
