@@ -1,9 +1,17 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;;
+}
+
 body{
     display: flex;
     height: 100vh;
     justify-content: center;
-    margin-top:30vh;
+    align-items: center;
+    background-size: cover; 
 }
+
 .container {
     display: block;
     border: 1px solid black;
@@ -11,7 +19,7 @@ body{
     width: 60vw;
     height: fit-content;
     padding: 1rem;
-    background-color: rgb(226, 226, 226);
+    background-color: rgba(226, 226, 226, 0.4);
 }
 
 .title-container,
