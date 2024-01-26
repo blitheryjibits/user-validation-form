@@ -37,7 +37,10 @@ export function validate(event) {
     }
     
     // check zipcode is from selected country
-    console.log(postcodeValidator(zipcode.value, country.value));
+    if(!postcodeValidator(zipcode.value, country.value)) {
+        zipcode.setCustomValidity("Please input a valid zipcode for the selected country.")
+        zipcode.reportValidity();
+    }
 
     resetErrorMessage(emailInput, passwordInput, passwordConfirmation, country, zipcode);
 
