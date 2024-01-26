@@ -5,9 +5,7 @@ const path = require('path');
 
 
 module.exports = {
-    entry: {
-        main: './src/index.js',
-    },
+    entry: ['./src/index.js', './src/style.css'],
     
     mode: process.env.NODE_ENV === "production" ? "production" : "development",
 
